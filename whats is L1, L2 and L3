@@ -1,0 +1,18 @@
+Would like to know what are the difference between L2 and L3 support activities?
+
+    https://www.sqlservercentral.com/forums/topic/differenece-between-l2-and-l3-support 
+    
+It totally depends on company. Earlier I worked for a bank there we had L2/L3. Please find the details below
+There is a change management process for every change that we do with Server or Database configurations.
+This has to be intimated in advance to all users who are working on that Database/servers so that they should be aware of that change.
+And basically any DBA will not have full Permissions always to do anythig with Database/Servers.
+
+Generally there are L1,L2, and L3 access levels for users.
+
+L1 means end user Access , And for DBA’s there will be L2 Access by default but with L2 access we can see but we can’t do any changes to database/Server 
+Configurations.So as to do that we have to get L3 Access from some duty manger and they will be monitoring what we are doing on that 
+database and this is all part of change management.
+
+
+For the product I work on (external support only) L2 deals with the client’s IT staff, has minimal visibility into the code, and can’t made code changes (although some of the more talented ones do recommend changes for what they can see). L3 support is part 
+of the development organization and we deal with the L2 team, not directly with the client and are responsible for coding bug fixes.
