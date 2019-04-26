@@ -1,0 +1,8 @@
+CAST and CONVERT are both used to convert data from one data type to another.
+
+The differences are 
+    1) syntax 
+      CAST (ColumnName AS NewDataType)
+      VONVERT (NewDatatype, ColumnName)
+   2) CAST is part of the ANSI-SQL specification; whereas, CONVERT is not.  In fact, CONVERT is SQL implementation specific.
+   3) CONVERT differences lie in that it accepts an optional style parameter which is used for formatting.
