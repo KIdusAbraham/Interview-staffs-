@@ -1,0 +1,39 @@
+whats is the differnce between checkpoint and lazy write?
+    Both the lazy writer process and a checkpoint both push in-memory pages out to disk, however that’s where the similarity ends.
+     Reference 
+        https://blog.sqlxdetails.com/checkpoint-vs-lazy-writer/
+        https://www.sqlservercentral.com/blogs/checkpoints-and-the-lazy-writer
+        https://sqlinthewild.co.za/index.php/2009/06/26/the-lazy-writer-and-the-checkpoint/
+  Lazy Writer
+
+The job of the lazy writer is to find dirty pages in the buffer pool and write them out to disk and drop those pages from cache. 
+It does this to keep a certain amount of free pages available within the buffer pool for data that may be requested by other queries. 
+The pages that it writes out are ‘older’ pages, ones that haven’t been used for a while.
+
+If there’s lots of available buffers, the lazy writer will be doing relatively little work and the number of pages written to disk will 
+be quite low. If the lazy writer’s consistently writing lots of data, it may indicate that there’s a memory bottleneck.
+
+Checkpoint
+
+The checkpoint process also writes dirty pages to disk, but it has no interest in keeping available buffers or memory pressure. 
+The job of the checkpoint is to keep the potential time needed to recover the database to a small value.
+
+Recovery is the process that the database must go through when it starts up to ensure transactional consistency. 
+In part of the recovery process SQL uses the transaction log to work out what transactions had committed but may not have had their 
+changes written to disk at the time of the shut down and it replays those transactions. That replay (roll forward) can be extensive on 
+larger, busy databases. 
+
+To reduce the amount of work required of this roll forward, the checkpoint process runs at regular intervals and writes all dirty data 
+pages to disk and writes an entry into the log indicating that all changes before that point are now on disk.
+
+One important thing to note here is that all dirty data pages are written to disk by the checkpoint, not just pages corresponding to 
+committed transactions. Of course, this means that changes may be written to disk and later rolled back, either explicitly or 
+because the transaction did not complete. This is not a concern. When the rollback happens, the data pages will again be modified 
+in memory and later written to disk. If the SQL service restarts after the pages were written to disk but before the transaction commits, 
+another part of the recovery process will undo those data changes.
+
+The frequency at which the checkpoint process runs is controlled by a server setting: “recovery interval (min)”. 
+This setting specifies how long a recovery should take. The higher this is set to, the less often checkpoint runs. 
+The flip side is that the higher the recovery interval is, the more work checkpoint has to do each time it runs, hence if 
+checkpoint is causing IO contention it may be better to reduce the recovery interval, rather than increasing it
+  
