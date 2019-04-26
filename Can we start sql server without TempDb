@@ -1,0 +1,21 @@
+Can we start sql server without TempDb? 
+  
+  We can't start sql server if tempdb is not available
+
+Below are steps you will take to resolve the issue of the tepmdb is corrupt
+    How to Start SQL Server without TempDB database?
+    Step 1: Start the SQL Server in minimal configuration mode.
+        Check this link (https://docs.microsoft.com/en-us/previous-versions/sql/sql-server-2008-r2/ms180965(v=sql.105)
+       Click here to see, "How to start the SQL Server in minimal mode using command prompt".
+
+    Step 2: Once SQL Server has started with minimum configuration mode; connect to SQL Server instance and move TempDB 
+          data and log file to a new location.
+
+          See, move TempDB data and log files to new location
+          https://docs.microsoft.com/en-us/sql/relational-databases/databases/move-system-databases?view=sql-server-2017
+
+    Step 3: Once you have performed the troubleshooting steps; exit SQLCMD window by typing Quit and Press Enter.
+
+    Step 4: . In the initial window click CTRL C and enter Y to Stop SQL Server Service.
+
+    Step 5 : Eventually, start the SQL Server Database Engine by Using SQL Server Configuration Manager.
