@@ -1,0 +1,23 @@
+how to deploy multiple SSIS packages into SQL server at once?
+  
+  There are several ways to accoplish this
+  1. Using Command Prompt Utility – DTUTIL
+      this tool is found in the Binn folder of SQL Server (For eg: C:\Program Files\Microsoft SQL Server\110\DTS\Binn\dtutil.exe)
+       (https://dataginger.com/2013/10/02/sql-server-how-to-copy-or-export-an-ssis-package-using-command-prompt-utility-dtutil/)
+  2. using stored procedure 
+  
+      DECLARE @ProjectBinary as varbinary(max)  
+      DECLARE @operation_id as bigint  
+      Set @ProjectBinary = (SELECT * FROM OPENROWSET(BULK 'C:\MyProjects\ SSISPackage_ProjectDeployment.ispac', 
+      SINGLE_BLOB) as BinaryData)  
+
+      Exec catalog.deploy_project @folder_name = 'SSIS Packages', @project_name = 'DeployViaStoredProc_SSIS', 
+      @Project_Stream = @ProjectBinary, @operation_id = @operation_id out  
+
+  
+  3. using SSIS package itself 
+  
+  
+  4. By using powershell
+    
+      https://www.red-gate.com/simple-talk/sql/ssis/deploying-multiple-ssis-projects-via-powershell/
