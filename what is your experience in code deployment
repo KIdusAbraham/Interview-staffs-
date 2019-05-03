@@ -1,0 +1,10 @@
+what is your experience in code deployment/change management?
+     (http://www.techbrothersit.com/2015/05/how-to-perform-sql-server-deployment.html)
+     
+1- View Documentation Process (Process to promote to production) whether it is an excel sheet to document change 
+    process or it is third party such as Service now.
+2- Viewing carefully the code that is being deployed to Production environment such as script, 
+    views, store procedures and other objects of SQL Server.
+3- Rollback verification, best Rollback strategies etc.
+4- Necessary backup completion prior to executing deployment based on what is being deployed in production environment.
+5- Communication importance during deployment process.
