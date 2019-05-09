@@ -1,0 +1,5 @@
+what is sparse file?
+  its a file the starts of empty when we create a database snapshot. when the pages are updated in the orginal/sourse database, the original version
+  of the page is copied to the sparse file. 
+  its uses copy-on-write technology 
+  
