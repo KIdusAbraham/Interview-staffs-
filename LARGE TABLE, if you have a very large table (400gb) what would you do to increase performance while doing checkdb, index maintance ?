@@ -1,0 +1,5 @@
+LARGE TABLE, if you have a very large table (400gb) what would you do to increase performance while doing checkdb, index maintance ?
+      
+      1. partition the table and perform the task accoudingly
+      2. conver that table into column stored 
+      
