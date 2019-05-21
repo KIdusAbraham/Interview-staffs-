@@ -1,8 +1,19 @@
 whats normalization, ER  diagram, and cardinality?
 
 Normalization
+    Database Normalization is a technique of organizing the data in the database. 
+    Normalization is a systematic approach of decomposing tables to eliminate data redundancy(repetition) 
+    and undesirable characteristics like Insertion, Update and Deletion Anomalies. It is a multi-step process 
+    that puts data into tabular form, removing duplicated data from the relation tables.
+    Normalization is used for mainly two purposes,
+        Eliminating redundant(useless) data.
+        Ensuring data dependencies make sense i.e data is logically stored.
+        https://www.studytonight.com/dbms/database-normalization.php
 
 Cardinality 
 
 
 ER diagram
+    An Entity Relationship Diagram (ERD) is a snapshot of data structures. An Entity Relationship Diagram shows entities 
+    (tables) in a database and relationships between tables within that database. 
+    For a good database design it is essential to have an Entity Relationship Diagram.
