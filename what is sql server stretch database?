@@ -1,0 +1,12 @@
+what is sql server stretch database?
+
+Problem
+You need to keep all of your data online in the event that you need to access the data. But some of this data is warm data 
+(needed frequently) and other is cold data (needed occasionally). 
+In this tip we look at how we can achieve this using the new stretch database feature in SQL Server and Azure.
+
+Solution
+SQL Server 2016 introduced the Stretch Database option to migrate your cold data transparently and securely to the Microsoft Azure cloud. 
+To use this feature, you must have access to a Microsoft Azure subscription and permissions to be able to communicate with Azure.
+
+https://www.mssqltips.com/sqlservertip/5526/how-to-setup-and-use-a-sql-server-stretch-database/
