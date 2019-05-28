@@ -1,0 +1,10 @@
+By default deadlock is not logged in the error or event log. If you want to capture this information in the SQL 
+Server Error Log you need to enable one or both of these trace flags.
+    
+    1204 - this provides information about the nodes involved in the deadlock
+    1222 - returns deadlock information in an XML format
+To turn these trace on the startup, we need to run the following DBCC statements.
+    DBCC (1204, -1)
+    DBCC (1222, -1)
+
+https://www.mssqltips.com/sqlservertutorial/252/tracing-a-sql-server-deadlock/
