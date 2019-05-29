@@ -1,0 +1,8 @@
+can we have a computed column in a view?
+
+    Yes we can have 
+    
+          create view testview
+          as
+          select SalesOrderID, OrderQty, ProductID, UnitPrice, UnitPriceDiscount, OrderQty*UnitPrice as 'LineTotal'
+          from sales.SalesOrderDetail
