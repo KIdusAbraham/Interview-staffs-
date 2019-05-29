@@ -1,0 +1,36 @@
+Whats are the differences between Identity & Sequence in SQL Server?
+
+    Difference 1:
+      The IDENTITY property is tied to a particular table and cannot be shared among multiple tables since it is a table column property.
+      On the flip side the SEQUENCE object is defined by the user and can be shared by multiple tables since is it is not tied to any table.
+ 
+ Difference 2:
+    To generate the next IDENTITY value, a new row has to be inserted into the table. On the other hand, the next VALUE for a 
+    SEQUENCE object can simply be generated using the NEXT VALUE FOR clause with the sequence object.
+ 
+ Difference 3
+    The value for the IDENTITY property cannot be reset to its initial value. In contrast, the value for the SEQUENCE object can be reset.
+
+          CREATE SEQUENCE [dbo].[RecycleSequence]
+           AS INT
+           START WITH 1
+           INCREMENT BY 1
+           MINVALUE 1
+           MAXVALUE 3
+           CYCLE
+           
+ Difference 4
+      A maximum value cannot be set for the IDENTITY property. On the other hand, the maximum value for a SEQUENCE object can be defined.
+
+      For a SEQUENCE object the MAXVALUE clause can be used to set the maximum value as shown in the following example.
+
+            CREATE SEQUENCE [dbo].[MaxSequence]
+             AS INT
+             START WITH 1
+             INCREMENT BY 1
+             MAXVALUE 3
+    In the above script, a SEQUENCE object has been created with a maximum value of 3. If you increment the value of this SEQUENCE 
+    beyond 3, it will throw an  error. 
+
+Reference: 
+https://www.sqlshack.com/difference-between-identity-sequence-in-sql-server/
