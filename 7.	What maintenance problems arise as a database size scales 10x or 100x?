@@ -1,0 +1,6 @@
+7.	What maintenance problems arise as a database size scales 10x or 100x? 
+
+    DBCC CHECKDB
+    Index maintenace 
+    backup and restore 
+    
