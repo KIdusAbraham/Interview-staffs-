@@ -1,0 +1,3 @@
+A secondary database in an availability group is in recovery for longer than expected post-failover, how would you diagnose the issue? 
+
+    https://dba.stackexchange.com/questions/230663/availability-group-database-stays-in-reverting-for-too-long-after-a-failover
