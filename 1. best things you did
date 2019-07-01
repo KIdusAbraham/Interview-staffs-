@@ -1,3 +1,21 @@
-1. while designing the database and the table I modified the table so that ROW OVERFLOW DATA is avoided 
+RE-DESIGNING OF THE DATABASE AND TABLES 
+
+    1. while designing the database and the table I modified the table so that ROW OVERFLOW DATA is avoided 
+    
+      most of the tables had more that 30 columns and the size of the row/column was very large
+      I normalized the table so that large colums are stored in a different table 
+      I make a foreign key relationships between the tables 
+      
+      
+      Since performance was impacted by row overlow, after redesigning and normalizing the tables, the performance was improved 
+      
+    1. Page density: the munber of rows in a page. the lower the density the lower the performance. 
+        having in appropraite varchar(max) in a table will hit the performance 
+        
+    
+    
+
+
+
 
 
