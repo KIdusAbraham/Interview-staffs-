@@ -1,1 +1,31 @@
 what are the tyepes of migration?
+
+Check lists for migration
+    Action Item	Yes/No, N/A
+          1.	Identify databases you would like to migrate	
+          2.	Backup all user databases	
+          3.	Script out all the existing login	
+          4.	Script out all the server Roles if applicable	
+          5.	Script out all the Audit and Audit Specifications if applicable	
+          6.	Script out backup devices if Applicable	
+          7.	Script out server level triggers if applicable	
+          8.	Script out Replication along with Configuration if Applicable	
+          9.	Script out Mirroring if Applicable	
+          10.	Script out Data Collection if applicable	
+          11.	Script out Resource Governor’s objects if applicable	
+          12.	Script out Linked Server if Applicable	
+          13.	Script out Log shipping if Applicable	
+          14.	Script  out all SQL Server Agent Jobs	
+          15.	Script out all DB Mail objects such as Profile and its settings	
+          16.	Script out All Proxy accounts and credentials if Applicable	
+          17.	Script out all Operators if Applicable	
+          18.	Script out all alerts if applicable	
+          19.	Save SQL Server, Server configuration in a file	
+          20.	Data Encryption Keys	
+
+Destination SQL Server Checklist
+      Action Item	Yes/No, N/A
+      1.	Required SQL Server is installed	
+      2.	DBA SQL Server Check list is completed	
+      3.	Enough Space for storing Backup and source scripts	
+      4.	Applications compatibility is signed off	
